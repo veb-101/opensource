@@ -23,12 +23,9 @@ while(1):
     # Convert BGR to HSV
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    # define range of blue color in HSV
     lower_red = np.array([26,80,147])
     upper_red = np.array([81,255,255])
     
-
-    #Threshold the HSV image to get only red colors
     mask = cv2.inRange(hsv, lower_red, upper_red)
     mask = cv2.erode(mask,kernel,iterations = 1)
     mask = cv2.dilate(mask,kernel,iterations = 2)
@@ -74,5 +71,4 @@ while(1):
 
 cv2.destroyAllWindows()
 cap.release()
-#Note There are some noises in the image. We will see how to remove them in later tutorials.
 
