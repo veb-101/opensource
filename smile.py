@@ -1,4 +1,4 @@
-#dlib based detector for real time
+#dlib based smile picture taker in real time
 import cv2
 import dlib
 import numpy as np
